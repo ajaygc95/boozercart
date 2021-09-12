@@ -98,7 +98,7 @@ const NavBar = (props) => {
           </MobileIcon>
 
           <NavMenu onClick={handleClick} click={click}>
-            {token != "" && token != undefined ? (
+            {is_authenticated || (token != "" && token != undefined) ? (
               <>
                 <CartButton to="/cart">
                   <ShoppingCartIcon>

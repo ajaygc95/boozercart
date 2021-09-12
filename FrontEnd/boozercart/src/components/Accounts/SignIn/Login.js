@@ -44,6 +44,7 @@ import {
 import axios from "axios";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import { googlLogin } from "../../../constants";
 
 function Login(props) {
   const token = localStorage.getItem("token");
@@ -90,6 +91,20 @@ function Login(props) {
 
   const responseGoogle = (response) => {
     console.log(response);
+    const accessToken = response.tokenObj["access_token"];
+    console.log(response.tokenObj["access_token"]);
+    console.log(response.profileObj["email"]);
+    console.log(response.profileObj["familyName"]);
+    console.log(response.profileObj["givenName"]);
+
+    axios
+      .post(googlLogin, {
+        token: accessToken,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+
     props.history.push("/dashboard");
   };
 

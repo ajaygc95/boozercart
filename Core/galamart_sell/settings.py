@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'hero.apps.HeroConfig',
     'vendor.apps.VendorConfig',
     'rest_framework.authtoken',
     'users.apps.UsersConfig',
+    
     'rest_framework',
     'corsheaders',
 
