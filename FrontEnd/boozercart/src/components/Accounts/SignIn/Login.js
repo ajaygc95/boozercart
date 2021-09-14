@@ -99,7 +99,7 @@ function Login(props) {
 
     axios
       .post(googlLogin, {
-        token: accessToken,
+        access_token: accessToken,
       })
       .then((res) => {
         console.log(res);

@@ -16,4 +16,4 @@ export const getStoreItems = `${endpoint}/get-store/`;
 export const getStore = `${endpoint}/todos/`;
 export const getuser = `${baseUrl}/user/users/`;
 export const getAuth = `${baseUrl}/auth/`;
-export const googlLogin = `${baseUrl}/accounts/google/login/?process=login/`;
+export const googlLogin = `${baseUrl}/accounts/google/login/`;
