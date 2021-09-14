@@ -76,6 +76,26 @@ export const AuthReducer = (initialState, action) => {
         signOnSuccess: true,
       };
 
+    case "REQUEST_SOCIAL":
+      console.log("This is social request from reducer");
+      return {
+        ...initialState,
+        loading: true,
+        signOnSuccess: false,
+        errorMessage: null,
+      };
+
+    case "SOCIAL_SUCCESS":
+      console.log("coming from Social reducer Success,", action);
+
+      return {
+        ...initialState,
+        token: action.payload.tokenObj["access_token"],
+        loading: false,
+        is_authenticated: true,
+        user: action.payload.tokenObj["givenName"],
+      };
+
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

@@ -48,6 +48,16 @@ export async function registerUser(dispatch, loginPayload, history) {
   }
 }
 
+export async function socialLogin(dispatch, payload, history) {
+  console.log("THISI IS PAYload at social login", payload);
+
+  dispatch({ type: "SOCIAL_SUCCESS", payload });
+  localStorage.setItem("token", payload.tokenObj["access_token"]);
+  localStorage.setItem("user", payload.profileObj["givenName"]);
+
+  history.push("/dashboard");
+}
+
 export async function logout(dispatch) {
   dispatch({ type: "LOGOUT" });
   localStorage.removeItem("user");

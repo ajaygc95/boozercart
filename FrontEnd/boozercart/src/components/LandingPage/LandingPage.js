@@ -12,7 +12,7 @@ import {
 function LandingPage() {
   return (
     <>
-      <Map></Map>
+      {/* <Map></Map> */}
       {/* <MapHero></MapHero> */}
       <InfoSection {...homeObj}></InfoSection>
       <InfoSection {...homeObjTwo}></InfoSection>

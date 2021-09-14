@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router";
 
-import { loginUser } from "../../Context/Action/Action";
+import { loginUser, socialLogin } from "../../Context/Action/Action";
 import { useAuthDispatch, useAuthState } from "../../Context/AuthContext";
 import LandingPage from "../../LandingPage/LandingPage";
 import {
@@ -97,13 +97,7 @@ function Login(props) {
     console.log(response.profileObj["familyName"]);
     console.log(response.profileObj["givenName"]);
 
-    axios
-      .post(googlLogin, {
-        access_token: accessToken,
-      })
-      .then((res) => {
-        console.log(res);
-      });
+    socialLogin(dispatch, response, props.history);
 
     props.history.push("/dashboard");
   };
