@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:8000";
+const baseUrl = "https://boozercartcore.azurewebsites.net";
 // https://boozercartcore.azurewebsites.net
 
 // http://localhost:8000/accounts/google/login/?process=login

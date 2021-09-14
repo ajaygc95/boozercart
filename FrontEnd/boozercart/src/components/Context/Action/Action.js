@@ -52,6 +52,7 @@ export async function socialLogin(dispatch, payload, history) {
   console.log("THISI IS PAYload at social login", payload);
 
   dispatch({ type: "SOCIAL_SUCCESS", payload });
+  
   localStorage.setItem("token", payload.tokenObj["access_token"]);
   localStorage.setItem("user", payload.profileObj["givenName"]);
 
